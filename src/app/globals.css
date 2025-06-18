@@ -1,26 +1,176 @@
 @import "tailwindcss";
 
+/* ========================
+   CSS Variables (Light)
+======================== */
 :root {
+  --primary-color: #9747ff;
+  --primary-dark: #4600a0;
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #000000;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --card: #ffffff;
+  --card-foreground: #000000;
+  --secondary: #f3f4f6;
+  --secondary-foreground: #374151;
+  --accent: #f9fafb;
+  --accent-foreground: #111827;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ========================
+   Dark Mode Overrides
+======================== */
+.dark {
+  --background: #000000;
+  --foreground: #ffffff;
+  --muted: #636363;
+  --border: #e3f2fd;
+  --card: #111111;
+  --card-foreground: #ffffff;
+  --secondary: #1f2937;
+  --secondary-foreground: #f9fafb;
+  --accent: #374151;
+  --accent-foreground: #f9fafb;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ========================
+   Base Reset
+======================== */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background);
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ========================
+   Scrollbar Utility
+======================== */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* ========================
+   Utility Styles
+======================== */
+.gradient-text {
+  background: linear-gradient(135deg, #9747ff 0%, #4600a0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass-effect {
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.05); /* Light fallback */
+}
+
+.dark .glass-effect {
+  background-color: rgba(255, 255, 255, 0.05); /* Dark override */
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ========================
+   Animations
+======================== */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-spin-slow {
+  animation: spin 3s linear infinite;
+}
+
+/* ========================
+   Hover Effects
+======================== */
+.tech-card {
+  transition: all 0.3s ease;
+}
+
+.tech-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(151, 71, 255, 0.3);
+}
+
+/* ========================
+   Transitions
+======================== */
+.theme-transition {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ========================
+   Responsive
+======================== */
+@media (max-width: 768px) {
+  .mobile-padding {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* ========================
+   Theme-Specific Utility Classes
+======================== */
+
+/* Light mode overrides */
+:not(.dark) .bg-card {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+:not(.dark) .text-muted {
+  color: #6b7280;
+}
+
+:not(.dark) .border-muted {
+  border-color: #e5e7eb;
+}
+
+/* Dark mode overrides */
+.dark .bg-card {
+  background-color: rgba(17, 17, 17, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .text-muted {
+  color: #9ca3af;
+}
+
+.dark .border-muted {
+  border-color: #374151;
 }
