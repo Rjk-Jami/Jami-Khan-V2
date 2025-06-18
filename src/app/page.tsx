@@ -1,6 +1,7 @@
 "use client";
 
 import Navigation from "@/components/Navigation/Navigation";
+import ProfileCard from "@/components/ProfileCard/ProfileCard";
 import { useTheme } from "@/contextProvider/ThemeProvider";
 import { useState, useEffect } from "react";
 
@@ -49,41 +50,56 @@ export default function PortfolioContent() {
       }`}
     >
       <Navigation activeSection={activeSection} />
-      {/* Main Content */}
-      <div className="flex-1 z-10 mobile-padding">
-        <section id="hero" className="min-h-screen flex items-center">
-          {/* <Hero /> */}
-        </section>
 
-        <section id="about" className="min-h-screen flex items-center py-20">
-          {/* <About /> */}
-        </section>
+      <div className="flex flex-col xl:flex-row xl:gap-16 relative max-w-7xl mx-auto">
+        
+        {/* Fixed Profile Card */}
+        <div className="xl:w-4/12 mb-7 xl:mb-0">
+          <ProfileCard />
+        </div>
 
-        <section id="skills" className="min-h-screen flex items-center py-20">
-          {/* <Skills /> */}
-        </section>
+        {/* Main Content */}
+        <div className="flex-1 z-10 mobile-padding">
+          <section id="hero" className="min-h-screen flex items-center">
+            {/* <Hero /> */}
+          </section>
 
-        <section
-          id="experience"
-          className="min-h-screen flex items-center py-20"
-        >
-          {/* <Experience /> */}
-        </section>
+          <section id="about" className="min-h-screen flex items-center py-20">
+            {/* <About /> */}
+          </section>
 
-        <section id="projects" className="min-h-screen flex items-center py-20">
-          {/* <Projects /> */}
-        </section>
+          <section id="skills" className="min-h-screen flex items-center py-20">
+            {/* <Skills /> */}
+          </section>
 
-        <section
-          id="education"
-          className="min-h-screen flex items-center py-20"
-        >
-          {/* <Education /> */}
-        </section>
+          <section
+            id="experience"
+            className="min-h-screen flex items-center py-20"
+          >
+            {/* <Experience /> */}
+          </section>
 
-        <section id="contact" className="min-h-screen flex items-center py-20">
-          {/* <Contact /> */}
-        </section>
+          <section
+            id="projects"
+            className="min-h-screen flex items-center py-20"
+          >
+            {/* <Projects /> */}
+          </section>
+
+          <section
+            id="education"
+            className="min-h-screen flex items-center py-20"
+          >
+            {/* <Education /> */}
+          </section>
+
+          <section
+            id="contact"
+            className="min-h-screen flex items-center py-20"
+          >
+            {/* <Contact /> */}
+          </section>
+        </div>
       </div>
     </main>
   );
