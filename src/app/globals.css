@@ -1,8 +1,5 @@
 @import "tailwindcss";
 
-/* ========================
-   CSS Variables (Light)
-======================== */
 :root {
   --primary-color: #9747ff;
   --primary-dark: #4600a0;
@@ -18,9 +15,6 @@
   --accent-foreground: #111827;
 }
 
-/* ========================
-   Dark Mode Overrides
-======================== */
 .dark {
   --background: #000000;
   --foreground: #ffffff;
@@ -34,14 +28,7 @@
   --accent-foreground: #f9fafb;
 }
 
-/* ========================
-   Base Reset
-======================== */
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
+
 
 html {
   scroll-behavior: smooth;
@@ -54,9 +41,6 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* ========================
-   Scrollbar Utility
-======================== */
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -66,9 +50,6 @@ body {
   display: none;
 }
 
-/* ========================
-   Utility Styles
-======================== */
 .gradient-text {
   background: linear-gradient(135deg, #9747ff 0%, #4600a0 100%);
   -webkit-background-clip: text;
@@ -77,31 +58,34 @@ body {
 }
 
 .glass-effect {
+  background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  background-color: rgba(255, 255, 255, 0.05); /* Light fallback */
+  transition: all 0.3s ease;
 }
 
 .dark .glass-effect {
-  background-color: rgba(255, 255, 255, 0.05); /* Dark override */
-  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* ========================
-   Animations
-======================== */
+.glass-effect {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px);
   }
   50% {
     transform: translateY(-20px);
   }
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
 }
 
 .animate-pulse-slow {
@@ -112,9 +96,6 @@ body {
   animation: spin 3s linear infinite;
 }
 
-/* ========================
-   Hover Effects
-======================== */
 .tech-card {
   transition: all 0.3s ease;
 }
@@ -124,16 +105,10 @@ body {
   box-shadow: 0 20px 40px rgba(151, 71, 255, 0.3);
 }
 
-/* ========================
-   Transitions
-======================== */
 .theme-transition {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ========================
-   Responsive
-======================== */
 @media (max-width: 768px) {
   .mobile-padding {
     padding-left: 1rem;
@@ -141,11 +116,7 @@ body {
   }
 }
 
-/* ========================
-   Theme-Specific Utility Classes
-======================== */
-
-/* Light mode overrides */
+/* Light theme specific styles */
 :not(.dark) .bg-card {
   background-color: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10px);
@@ -160,7 +131,7 @@ body {
   border-color: #e5e7eb;
 }
 
-/* Dark mode overrides */
+/* Dark theme specific styles */
 .dark .bg-card {
   background-color: rgba(17, 17, 17, 0.8);
   backdrop-filter: blur(10px);

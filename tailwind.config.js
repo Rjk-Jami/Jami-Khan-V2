@@ -1,15 +1,13 @@
-// tailwind.config.js
 import animate from "tailwindcss-animate";
 
 /** @type {import('tailwindcss').Config} */
 const config = {
-  darkMode: "class",
+  darkMode: "class", 
   content: [
-    "./pages/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
-    "./app/**/*.{ts,tsx}",
-    "./src/**/*.{ts,tsx}",
-    "*.{js,ts,jsx,tsx,mdx}",
+    "./src/pages/**/*.{html,js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{html,js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{html,js,ts,jsx,tsx,mdx}",
+    "./src/utils/**/*.{html,js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     container: {
@@ -21,8 +19,7 @@ const config = {
     },
     extend: {
       fontFamily: {
-        sans: ["var(--font-sans)"],
-        mono: ["var(--font-mono)"],
+        sans: ["var(--font-inter)"],
         display: ["var(--font-poppins)"],
       },
       colors: {
