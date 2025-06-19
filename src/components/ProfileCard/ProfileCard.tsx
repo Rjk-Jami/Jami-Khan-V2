@@ -17,7 +17,7 @@ export default function ProfileCard() {
         }`}
       >
         {/* Header */}
-        <div className="flex justify-between items-start mb-6">
+        <div className="flex justify-between items-baseline mb-6">
           <h2 className="text-2xl font-bold">
             Jami Khan
           </h2>
