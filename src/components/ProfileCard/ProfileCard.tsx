@@ -57,8 +57,8 @@ export default function ProfileCard() {
         {/* Social Links */}
         <div className="flex justify-center gap-4 mb-6">
           {[
-            { href: "https://facebook.com/raihanjamikhan", icon: Facebook },
-            { href: "https://github.com/raihanjamikhan", icon: Github },
+            { href: "https://www.facebook.com/rjk.jami", icon: Facebook },
+            { href: "https://github.com/Rjk-Jami", icon: Github },
             { href: "https://linkedin.com/in/raihanjamikhan", icon: Linkedin },
           ].map(({ href, icon: Icon }, index) => (
             <Link
