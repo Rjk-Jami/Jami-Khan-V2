@@ -2,6 +2,7 @@
 
 import Navigation from "@/components/Navigation/Navigation";
 import ProfileCard from "@/components/ProfileCard/ProfileCard";
+import Hero from "@/components/Sections/Hero/Hero";
 import { useTheme } from "@/contextProvider/ThemeProvider";
 import { useState, useEffect } from "react";
 
@@ -61,7 +62,7 @@ export default function PortfolioContent() {
         {/* Main Content */}
         <div className="flex-1 z-10 mobile-padding">
           <section id="hero" className="min-h-screen flex items-center">
-            {/* <Hero /> */}
+            <Hero />
           </section>
 
           <section id="about" className="min-h-screen flex items-center py-20">

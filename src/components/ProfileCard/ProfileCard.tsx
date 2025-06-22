@@ -39,7 +39,7 @@ export default function ProfileCard() {
                 src={profilePic}
                 alt="Jami Khan"
                 fill
-                className="object-cover"
+                className="object-fill"
                 priority
               />
             </div>
