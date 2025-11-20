@@ -65,11 +65,11 @@ export default function About() {
   ];
 
   return (
-    <section ref={ref} className="relative w-full px-6 py-20">
+    <section ref={ref} className="relative w-full px-6">
       {/* Background Wave Layers - Parallax */}
       <motion.div
         style={{ y: useTransform(scrollYProgress, [0, 1], [0, -100]) }}
-        className="absolute top-0 right-0 -z-10 h-96 w-96 rounded-full bg-purple-200/60 blur-3xl"
+        className="absolute top-0 right-0 -z-10 h-96 w-96 rounded-full bg-purple-200/40 blur-3xl"
       />
       <motion.div
         style={{ y: useTransform(scrollYProgress, [0, 1], [0, 100]) }}
@@ -108,7 +108,7 @@ export default function About() {
         ))}
       </div>
 
-      <div className="mx-auto max-w-5xl">
+      <div className="mx-auto max-w-3xl lg:mr-10 lg:ml-10 2xl:mx-auto 2xl:max-w-5xl">
         <motion.div style={{ opacity, y }} className="space-y-12">
           {/* Header */}
           <div className="space-y-4 text-center md:text-left">
@@ -227,14 +227,16 @@ export default function About() {
                 viewport={{ once: true }}
                 transition={{ delay: 1 + index * 0.1, duration: 0.6, type: "spring" }}
                 whileHover={{ scale: 1.02, y: -2 }}
-                className="bg-secondary/30 hover:bg-secondary/50 flex items-center gap-4 rounded-xl border border-purple-400/20 p-5 backdrop-blur-sm transition-all hover:border-white/10"
+                className="group bg-secondary/30 hover:border-primary/50 hover:bg-secondary/50 flex items-center gap-4 rounded-xl border border-purple-400/20 p-5 backdrop-blur-sm transition-all hover:shadow-[0_0_20px_rgba(151,71,255,0.4)]"
               >
                 <motion.div
                   whileHover={{ rotate: 360, scale: 1.1 }}
                   transition={{ duration: 0.6 }}
-                  className="bg-background/50 rounded-lg p-3 shadow-sm"
+                  className="bg-background/50 relative rounded-lg p-3 shadow-sm"
                 >
-                  {feature.icon}
+                  {/* Icon glow */}
+                  <div className="from-primary/20 absolute inset-0 rounded-lg bg-gradient-to-br to-blue-500/20 opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-100" />
+                  <div className="relative z-10">{feature.icon}</div>
                 </motion.div>
                 <div>
                   <h3 className="text-foreground font-semibold">{feature.title}</h3>
