@@ -1,31 +1,93 @@
 @import "tailwindcss";
 
 :root {
-  --primary-color: #9747ff;
-  --primary-dark: #4600a0;
-  --background: #ffffff;
-  --foreground: #000000;
-  --muted: #6b7280;
-  --border: #e5e7eb;
-  --card: #ffffff;
-  --card-foreground: #000000;
-  --secondary: #f3f4f6;
-  --secondary-foreground: #374151;
-  --accent: #f9fafb;
-  --accent-foreground: #111827;
+  /* Primary Colors - Purple/Blue theme for AnimGravity design */
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
+
+  /* Primary - Vibrant Purple */
+  --primary: 265 100% 64%;
+  --primary-foreground: 210 40% 98%;
+
+  /* Secondary - Soft Gray */
+  --secondary: 210 40% 96.1%;
+  --secondary-foreground: 222.2 47.4% 11.2%;
+
+  /* Muted - Subtle Gray */
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+
+  /* Accent - Light Purple */
+  --accent: 265 60% 95%;
+  --accent-foreground: 265 100% 64%;
+
+  /* Destructive - Red */
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+
+  /* Border & Input */
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 265 100% 64%;
+
+  /* Chart Colors */
+  --chart-1: 265 100% 64%;
+  --chart-2: 220 100% 60%;
+  --chart-3: 200 100% 50%;
+  --chart-4: 280 80% 60%;
+  --chart-5: 240 70% 55%;
+
+  --radius: 0.5rem;
 }
 
 .dark {
-  --background: #000000;
-  --foreground: #ffffff;
-  --muted: #636363;
-  --border: #e3f2fd;
-  --card: #111111;
-  --card-foreground: #ffffff;
-  --secondary: #1f2937;
-  --secondary-foreground: #f9fafb;
-  --accent: #374151;
-  --accent-foreground: #f9fafb;
+  /* Dark Mode - Deep Black with Purple accents */
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+
+  --card: 222.2 84% 8%;
+  --card-foreground: 210 40% 98%;
+
+  --popover: 222.2 84% 8%;
+  --popover-foreground: 210 40% 98%;
+
+  /* Primary - Bright Purple for dark mode */
+  --primary: 265 100% 70%;
+  --primary-foreground: 222.2 84% 4.9%;
+
+  /* Secondary - Dark Gray */
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+
+  /* Muted - Medium Gray */
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+
+  /* Accent - Dark Purple */
+  --accent: 265 50% 15%;
+  --accent-foreground: 265 100% 70%;
+
+  /* Destructive - Red */
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+
+  /* Border & Input */
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 265 100% 70%;
+
+  /* Chart Colors */
+  --chart-1: 265 100% 70%;
+  --chart-2: 220 100% 65%;
+  --chart-3: 200 100% 55%;
+  --chart-4: 280 80% 65%;
+  --chart-5: 240 70% 60%;
 }
 
 
@@ -79,10 +141,12 @@ body {
 }
 
 @keyframes float {
+
   0%,
   100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-20px);
   }
