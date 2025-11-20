@@ -57,10 +57,10 @@ export default function PortfolioContent() {
     >
       <Navigation activeSection={activeSection} />
 
-      <div className="flex flex-col xl:flex-row xl:gap-16 relative w-full">
+      <div className="flex flex-col xl:flex-row  relative w-full">
 
         {/* Fixed Profile Card */}
-        <div className="xl:w-4/12 mb-7 xl:mb-0">
+        <div className="xl:w-3/11  !2xl:w-4/12 mb-7 xl:mb-0">
           <ProfileCard />
         </div>
 

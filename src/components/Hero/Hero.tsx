@@ -105,7 +105,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, ease: "easeOut" }}
-                className="relative z-10 max-w-5xl mx-auto px-6 text-center"
+                className="relative z-10 max-w-3xl 2xl:max-w-5xl mx-auto lg:me-auto  2xl:mx-auto  text-center"
             >
                 <div className="space-y-8">
                     {/* Badge */}
@@ -127,7 +127,7 @@ export default function Hero() {
                             transition={{ delay: 0.5, duration: 1 }}
                             className="absolute inset-0 blur-3xl bg-gradient-to-r from-primary/30 to-blue-500/30"
                         />
-                        <h1 className="relative text-5xl md:text-7xl font-bold tracking-tight pb-2">
+                        <h1 className="relative text-4xl md:text-6xl 2xl:text-7xl font-bold tracking-tight pb-2">
                             <motion.span
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
@@ -140,7 +140,7 @@ export default function Hero() {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.6, duration: 0.8 }}
-                                className="block text-3xl text-foreground/80 mt-4"
+                                className="block text-2xl lg:text-3xl text-foreground/80 mt-4"
                             >
                                 Front-end Developer & React / Next.js Enthusiast
                             </motion.span>
@@ -152,7 +152,7 @@ export default function Hero() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.8, duration: 0.8 }}
-                        className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
+                        className="text-md md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
                     >
                         Constantly learning, building, and improving …
                     </motion.p>
