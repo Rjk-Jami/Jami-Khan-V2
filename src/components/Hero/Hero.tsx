@@ -28,7 +28,7 @@ export default function Hero() {
     return (
         <section
             ref={ref}
-            className="relative min-h-screen w-full flex items-center justify-center bg-background perspective-1000"
+            className="relative min-h-screen w-full flex items-center justify-center bg-background perspective-1000 "
         >
             {/* Background Gradients - Soft pulsing blobs */}
             <div className="absolute inset-0 pointer-events-none">
@@ -68,7 +68,7 @@ export default function Hero() {
                         ease: "easeInOut",
                         delay: 4,
                     }}
-                    className="absolute top-[40%] left-[50%] w-[50%] h-[50%] bg-purple-500/15 rounded-full blur-[100px]"
+                    className="absolute top-[40%] left-[50%] w-[50%] h-[50%] dark:bg-purple-500/15 bg-purple-500/20 rounded-full blur-[100px]"
                 />
             </div>
 
@@ -77,7 +77,7 @@ export default function Hero() {
                 {particles.map((p) => (
                     <motion.div
                         key={p.id}
-                        className="absolute rounded-full bg-gradient-to-br from-primary/40 to-blue-500/40 backdrop-blur-sm"
+                        className="absolute rounded-full bg-gradient-to-br from-blue-500/40 to-blue-500/40 backdrop-blur-sm"
                         style={{
                             left: `${p.x}%`,
                             top: `${p.y}%`,
@@ -140,7 +140,7 @@ export default function Hero() {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.6, duration: 0.8 }}
-                                className="block text-3xl md:text-5xl text-foreground/80 mt-4"
+                                className="block text-3xl text-foreground/80 mt-4"
                             >
                                 Front-end Developer & React / Next.js Enthusiast
                             </motion.span>
@@ -152,9 +152,9 @@ export default function Hero() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.8, duration: 0.8 }}
-                        className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
+                        className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
                     >
-                        Constantly learning, building, and improving … Frontend Developer from Bangladesh
+                        Constantly learning, building, and improving …
                     </motion.p>
 
                     {/* CTA Buttons */}
@@ -196,12 +196,13 @@ export default function Hero() {
             </motion.div>
 
             {/* Scroll Indicator */}
-            <motion.div
+            <motion.a
+                href="#about"
                 style={{
                     y: scrollIndicatorY,
                     opacity: scrollIndicatorOpacity,
                 }}
-                className="absolute bottom-10 left-1/2 -translate-x-1/2"
+                className="absolute bottom-10 left-1/2 -translate-x-1/2 cursor-pointer hover:scale-110 transition-transform "
             >
                 <div className="w-6 h-10 rounded-full border-2 border-primary/40 flex justify-center p-1.5 backdrop-blur-sm bg-background/20">
                     <motion.div
@@ -214,7 +215,7 @@ export default function Hero() {
                         className="w-1.5 h-1.5 rounded-full bg-primary shadow-lg shadow-primary/50"
                     />
                 </div>
-            </motion.div>
+            </motion.a>
         </section>
     );
 }
