@@ -73,7 +73,7 @@ export default function PortfolioContent() {
             <Hero />
           </section>
 
-          <section id="about" className="min-h-screen flex items-center py-20">
+          <section id="about" className="min-h-screen flex items-center py-10">
             <About />
           </section>
 
