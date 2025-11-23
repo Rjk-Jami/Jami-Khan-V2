@@ -49,7 +49,7 @@ export default function Experience() {
                 }`}
               >
                 {/* Timeline Dot */}
-                <div className="bg-background border-primary absolute left-4 z-10 mt-1.5 h-4 w-4 -translate-x-1/2 rounded-full border-2 shadow-[0_0_10px_rgba(151,71,255,0.5)] md:left-1/2">
+                <div className="bg-background border-primary absolute left-4 z-10 mt-1.5 h-4 w-4 -translate-x-1/2 rounded-full border-2 shadow-[0_0_10px_hsl(var(--primary)/0.5)] md:left-1/2">
                   <motion.div
                     animate={{ scale: [1, 1.5, 1] }}
                     transition={{ duration: 2, repeat: Infinity }}

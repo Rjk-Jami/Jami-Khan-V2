@@ -9,12 +9,10 @@ import Projects from "@/components/Projects/Projects";
 import Education from "@/components/Education/Education";
 import Contact from "@/components/Contact/Contact";
 import ProfileCard from "@/components/ProfileCard/ProfileCard";
-import { useTheme } from "@/contextProvider/ThemeProvider";
 import { useState, useEffect } from "react";
 
 export default function PortfolioContent() {
   const [activeSection, setActiveSection] = useState("hero");
-  const { theme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,13 +44,7 @@ export default function PortfolioContent() {
   }, []);
 
   return (
-    <main
-      className={`relative min-h-screen w-full overflow-x-hidden transition-colors duration-300 ${
-        theme === "dark"
-          ? "bg-black text-white"
-          : "bg-gradient-to-br from-gray-50 to-white text-gray-900"
-      }`}
-    >
+    <main className="bg-background text-foreground relative min-h-screen w-full overflow-x-hidden transition-colors duration-300">
       <Navigation activeSection={activeSection} />
 
       <div className="relative flex w-full flex-col xl:flex-row">

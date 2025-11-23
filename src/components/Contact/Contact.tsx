@@ -38,7 +38,7 @@ export default function Contact() {
         {particles.map((p) => (
           <motion.div
             key={p.id}
-            className="absolute rounded-full bg-blue-500"
+            className="bg-accent absolute rounded-full"
             style={{
               left: `${p.x}%`,
               top: `${p.y}%`,
@@ -97,7 +97,7 @@ export default function Contact() {
               animate={{
                 borderColor:
                   focusedField === "name" ? "hsl(var(--primary))" : "rgba(255,255,255,0.1)",
-                boxShadow: focusedField === "name" ? "0 0 20px rgba(151,71,255,0.3)" : "none",
+                boxShadow: focusedField === "name" ? "0 0 20px hsl(var(--primary) / 0.3)" : "none",
               }}
               className="bg-secondary/20 relative overflow-hidden rounded-xl border-2 backdrop-blur-sm"
             >
@@ -131,7 +131,7 @@ export default function Contact() {
               animate={{
                 borderColor:
                   focusedField === "email" ? "hsl(var(--primary))" : "rgba(255,255,255,0.1)",
-                boxShadow: focusedField === "email" ? "0 0 20px rgba(151,71,255,0.3)" : "none",
+                boxShadow: focusedField === "email" ? "0 0 20px hsl(var(--primary) / 0.3)" : "none",
               }}
               className="bg-secondary/20 relative overflow-hidden rounded-xl border-2 backdrop-blur-sm"
             >
@@ -165,7 +165,8 @@ export default function Contact() {
               animate={{
                 borderColor:
                   focusedField === "message" ? "hsl(var(--primary))" : "rgba(255,255,255,0.1)",
-                boxShadow: focusedField === "message" ? "0 0 20px rgba(151,71,255,0.3)" : "none",
+                boxShadow:
+                  focusedField === "message" ? "0 0 20px hsl(var(--primary) / 0.3)" : "none",
               }}
               className="bg-secondary/20 relative overflow-hidden rounded-xl border-2 backdrop-blur-sm"
             >

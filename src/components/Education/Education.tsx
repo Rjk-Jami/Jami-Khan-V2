@@ -31,12 +31,12 @@ export default function Education() {
             ease: "linear",
             delay: 5,
           }}
-          className="absolute top-2/3 left-0 h-1 w-full bg-gradient-to-r from-transparent via-blue-500/20 to-transparent"
+          className="via-accent/20 absolute top-2/3 left-0 h-1 w-full bg-gradient-to-r from-transparent to-transparent"
         />
 
         {/* Gradient blobs */}
         <div className="bg-primary/5 absolute top-0 right-0 h-96 w-96 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 h-96 w-96 rounded-full bg-blue-500/5 blur-3xl" />
+        <div className="bg-accent/5 absolute bottom-0 left-0 h-96 w-96 rounded-full blur-3xl" />
       </div>
 
       <div className="mx-auto max-w-4xl space-y-16">
@@ -91,7 +91,7 @@ export default function Education() {
               <defs>
                 <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
                   <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.5" />
-                  <stop offset="100%" stopColor="hsl(220 100% 50%)" stopOpacity="0.5" />
+                  <stop offset="100%" stopColor="hsl(var(--accent))" stopOpacity="0.5" />
                 </linearGradient>
               </defs>
             </svg>

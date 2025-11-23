@@ -1,53 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  /* Primary Colors - Purple/Blue theme for AnimGravity design */
-  --background: 0 0% 100%;
-  --foreground: 222.2 84% 4.9%;
-
-  --card: 0 0% 100%;
-  --card-foreground: 222.2 84% 4.9%;
-
-  --popover: 0 0% 100%;
-  --popover-foreground: 222.2 84% 4.9%;
-
-  /* Primary - Vibrant Purple */
-  --primary: 265 100% 64%;
-  --primary-foreground: 210 40% 98%;
-
-  /* Secondary - Soft Gray */
-  --secondary: 210 40% 96.1%;
-  --secondary-foreground: 222.2 47.4% 11.2%;
-
-  /* Muted - Subtle Gray */
-  --muted: 210 40% 96.1%;
-  --muted-foreground: 215.4 16.3% 46.9%;
-
-  /* Accent - Light Purple */
-  --accent: 265 60% 95%;
-  --accent-foreground: 265 100% 64%;
-
-  /* Destructive - Red */
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 210 40% 98%;
-
-  /* Border & Input */
-  --border: 214.3 31.8% 91.4%;
-  --input: 214.3 31.8% 91.4%;
-  --ring: 265 100% 64%;
-
-  /* Chart Colors */
-  --chart-1: 265 100% 64%;
-  --chart-2: 220 100% 60%;
-  --chart-3: 200 100% 50%;
-  --chart-4: 280 80% 60%;
-  --chart-5: 240 70% 55%;
-
-  --radius: 0.5rem;
-}
-
-.dark {
-  /* Dark Mode - Deep Black with Purple accents */
+  /* Static Dark Theme - Violet/Purple */
   --background: 222.2 84% 4.9%;
   --foreground: 210 40% 98%;
 
@@ -57,9 +11,9 @@
   --popover: 222.2 84% 8%;
   --popover-foreground: 210 40% 98%;
 
-  /* Primary - Bright Purple for dark mode */
-  --primary: 265 100% 70%;
-  --primary-foreground: 222.2 84% 4.9%;
+  /* Primary - Vibrant Purple */
+  --primary: 265 100% 64%;
+  --primary-foreground: 210 40% 98%;
 
   /* Secondary - Dark Gray */
   --secondary: 217.2 32.6% 17.5%;
@@ -88,9 +42,9 @@
   --chart-3: 200 100% 55%;
   --chart-4: 280 80% 65%;
   --chart-5: 240 70% 60%;
+
+  --radius: 0.5rem;
 }
-
-
 
 html {
   scroll-behavior: smooth;
@@ -100,7 +54,6 @@ body {
   color: hsl(var(--foreground));
   background: hsl(var(--background));
   overflow-x: hidden;
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .scrollbar-hide {
@@ -119,18 +72,12 @@ body {
   background-clip: text;
 }
 
-/* Light mode glass effect */
+/* Glass effect */
 .glass-effect {
-  background: rgba(0, 0, 0, 0.05);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-}
-
-/* Dark mode glass effect */
-.dark .glass-effect {
   background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
 }
 
 .animate-float {
@@ -138,7 +85,6 @@ body {
 }
 
 @keyframes float {
-
   0%,
   100% {
     transform: translateY(0px);
@@ -166,43 +112,9 @@ body {
   box-shadow: 0 20px 40px rgba(151, 71, 255, 0.3);
 }
 
-.theme-transition {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 @media (max-width: 768px) {
   .mobile-padding {
     padding-left: 1rem;
     padding-right: 1rem;
   }
-}
-
-/* Light theme specific styles */
-:not(.dark) .bg-card {
-  background-color: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-:not(.dark) .text-muted {
-  color: #6b7280;
-}
-
-:not(.dark) .border-muted {
-  border-color: #e5e7eb;
-}
-
-/* Dark theme specific styles */
-.dark .bg-card {
-  background-color: rgba(17, 17, 17, 0.8);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.dark .text-muted {
-  color: #9ca3af;
-}
-
-.dark .border-muted {
-  border-color: #374151;
 }

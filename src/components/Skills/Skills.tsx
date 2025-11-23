@@ -19,167 +19,138 @@ import {
 } from "react-icons/si";
 
 const skills = [
-  { name: "HTML5", icon: SiHtml5, color: "text-orange-500" },
-  { name: "CSS3", icon: SiCss3, color: "text-blue-500" },
-  { name: "JavaScript", icon: SiJavascript, color: "text-yellow-400" },
-  { name: "TypeScript", icon: SiTypescript, color: "text-blue-600" },
-  { name: "React.js", icon: SiReact, color: "text-cyan-400" },
-  { name: "Next.js", icon: SiNextdotjs, color: "text-foreground" },
-  { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-cyan-300" },
-  { name: "Bootstrap", icon: SiBootstrap, color: "text-purple-600" },
-  { name: "Node.js", icon: SiNodedotjs, color: "text-green-500" },
-  { name: "Express.js", icon: SiExpress, color: "text-foreground" },
-  { name: "Firebase", icon: SiFirebase, color: "text-yellow-500" },
-  { name: "MongoDB", icon: SiMongodb, color: "text-green-600" },
-  { name: "MySQL", icon: SiMysql, color: "text-blue-400" },
-  { name: "Redis", icon: SiRedis, color: "text-red-500" },
+  { name: "HTML5", icon: SiHtml5, category: "Frontend" },
+  { name: "CSS3", icon: SiCss3, category: "Frontend" },
+  { name: "JavaScript", icon: SiJavascript, category: "Frontend" },
+  { name: "TypeScript", icon: SiTypescript, category: "Frontend" },
+  { name: "React.js", icon: SiReact, category: "Frontend" },
+  { name: "Next.js", icon: SiNextdotjs, category: "Frontend" },
+  { name: "Tailwind CSS", icon: SiTailwindcss, category: "Frontend" },
+  { name: "Bootstrap", icon: SiBootstrap, category: "Frontend" },
+  { name: "Node.js", icon: SiNodedotjs, category: "Backend" },
+  { name: "Express.js", icon: SiExpress, category: "Backend" },
+  { name: "Firebase", icon: SiFirebase, category: "Backend" },
+  { name: "MongoDB", icon: SiMongodb, category: "Database" },
+  { name: "MySQL", icon: SiMysql, category: "Database" },
+  { name: "Redis", icon: SiRedis, category: "Database" },
 ];
-
-const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.08,
-      delayChildren: 0.2,
-    },
-  },
-};
-
-const item = {
-  hidden: { opacity: 0, y: 30, scale: 0.8 },
-  show: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: {
-      type: "spring" as const,
-      stiffness: 100,
-      damping: 12,
-    },
-  },
-};
 
 export default function Skills() {
   return (
-    <section className="relative overflow-hidden px-4 md:px-8" id="skills">
-      {/* Geometric Background Animation */}
-      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-        {/* Gradient blobs */}
+    <section className="relative min-h-screen px-4 py-20 md:px-8" id="skills">
+      {/* Background gradient blobs */}
+      <div className="pointer-events-none absolute inset-0 -z-10">
         <motion.div
           animate={{
-            opacity: [0.05, 0.1, 0.05],
-            scale: [1, 1.1, 1],
+            scale: [1, 1.2, 1],
+            opacity: [0.3, 0.5, 0.3],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="bg-primary/10 absolute top-[-20%] left-[-10%] h-[60%] w-[60%] rounded-full blur-[120px]"
+        />
+        <motion.div
+          animate={{
+            scale: [1, 1.3, 1],
+            opacity: [0.2, 0.4, 0.2],
           }}
           transition={{
             duration: 10,
             repeat: Infinity,
             ease: "easeInOut",
-          }}
-          className="bg-primary/10 absolute top-1/4 left-1/4 h-96 w-96 rounded-full blur-3xl"
-        />
-        <motion.div
-          animate={{
-            opacity: [0.05, 0.15, 0.05],
-            scale: [1, 1.2, 1],
-          }}
-          transition={{
-            duration: 12,
-            repeat: Infinity,
-            ease: "easeInOut",
             delay: 2,
           }}
-          className="absolute right-1/4 bottom-1/4 h-96 w-96 rounded-full bg-blue-500/10 blur-3xl"
+          className="bg-accent/10 absolute right-[-10%] bottom-[-20%] h-[60%] w-[60%] rounded-full blur-[120px]"
         />
-
-        {/* Geometric lines */}
-        <svg className="absolute inset-0 h-full w-full opacity-5">
-          <defs>
-            <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="0.5" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#grid)" />
-        </svg>
       </div>
 
-      <div className="mx-auto max-w-6xl">
+      {/* Subtle grid pattern */}
+      <div className="absolute inset-0 -z-10 opacity-[0.15]">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `linear-gradient(to right, hsl(var(--primary) / 0.1) 1px, transparent 1px),
+                           linear-gradient(to bottom, hsl(var(--primary) / 0.1) 1px, transparent 1px)`,
+            backgroundSize: "64px 64px",
+          }}
+        />
+      </div>
+
+      <div className="mx-auto max-w-7xl">
+        {/* Header Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="mb-12 space-y-4 text-center md:text-left"
+          transition={{ duration: 0.6 }}
+          className="mb-16 text-center"
         >
-          <h2 className="from-primary bg-gradient-to-r to-blue-500 bg-clip-text text-3xl font-bold text-transparent md:text-4xl">
+          <h2 className="from-primary via-accent to-primary mb-4 bg-gradient-to-r bg-clip-text text-4xl font-bold text-transparent md:text-5xl">
             Skills & Technologies
           </h2>
-          <motion.div
-            initial={{ scaleX: 0 }}
-            whileInView={{ scaleX: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="bg-primary mx-auto h-1 w-20 origin-left rounded-full md:mx-0"
-          />
-          <p className="text-muted-foreground mx-auto max-w-2xl md:mx-0">
-            My technical toolkit for building robust and scalable applications.
+          <div className="from-primary to-accent mx-auto mb-6 h-1 w-24 rounded-full bg-gradient-to-r" />
+          <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
+            My technical toolkit for building robust and scalable applications
           </p>
         </motion.div>
 
+        {/* Skills Grid */}
         <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5"
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 md:gap-6 lg:grid-cols-5"
         >
           {skills.map((skill, index) => (
             <motion.div
-              key={index}
-              variants={item}
-              whileHover={{
-                scale: 1.08,
-                y: -8,
-                rotateY: 5,
-                rotateX: 5,
-              }}
-              className="group bg-secondary/30 hover:border-primary/50 perspective-1000 relative flex flex-col items-center justify-center rounded-xl border border-white/5 p-6 backdrop-blur-sm transition-all duration-300"
-              style={{ transformStyle: "preserve-3d" }}
+              key={skill.name}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.05 }}
+              className="group relative"
             >
-              {/* Glowing border effect */}
-              <motion.div
-                className="from-primary/0 to-primary/0 group-hover:from-primary/20 absolute inset-0 -z-10 rounded-xl bg-gradient-to-br blur-md transition-all duration-500 group-hover:to-blue-500/20"
-                initial={{ opacity: 0 }}
-                whileHover={{ opacity: 1 }}
-              />
+              {/* Card Container */}
+              <div className="hover:border-primary/50 border-border/50 bg-card/40 hover:bg-card/60 relative h-full rounded-xl border p-6 backdrop-blur-sm transition-all duration-300">
+                {/* Glow Effect on Hover */}
+                <div className="from-primary/20 to-accent/20 absolute inset-0 -z-10 rounded-xl bg-gradient-to-r opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-100" />
 
-              {/* Gradient overlay */}
-              <div className="from-primary/5 absolute inset-0 rounded-xl bg-gradient-to-br to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                {/* Border Glow */}
+                <div className="absolute inset-0 rounded-xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <div
+                    className="from-primary/50 via-accent/50 to-primary/50 absolute inset-0 rounded-xl bg-gradient-to-r blur-sm"
+                    style={{
+                      padding: "1px",
+                      WebkitMask:
+                        "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                      WebkitMaskComposite: "xor",
+                      maskComposite: "exclude",
+                    }}
+                  />
+                </div>
 
-              {/* Icon container with pulse */}
-              <motion.div
-                className="bg-background/50 group-hover:bg-background/80 group-hover:ring-primary/50 relative z-10 mb-4 rounded-full p-3 ring-1 ring-white/10 transition-colors duration-300"
-                whileHover={{
-                  scale: [1, 1.2, 1],
-                }}
-                transition={{
-                  duration: 0.4,
-                }}
-              >
-                <skill.icon
-                  className={`h-8 w-8 ${skill.color} transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_8px_rgba(151,71,255,0.5)]`}
-                />
-              </motion.div>
+                {/* Content */}
+                <div className="relative flex flex-col items-center justify-center gap-4">
+                  {/* Icon */}
+                  <div className="group-hover:text-primary text-muted-foreground transition-colors duration-300">
+                    <skill.icon className="h-12 w-12 md:h-14 md:w-14" />
+                  </div>
 
-              <span className="text-muted-foreground group-hover:text-foreground relative z-10 text-sm font-medium transition-colors">
-                {skill.name}
-              </span>
+                  {/* Skill Name */}
+                  <span className="text-muted-foreground group-hover:text-foreground text-center text-sm font-medium transition-colors duration-300 md:text-base">
+                    {skill.name}
+                  </span>
+                </div>
 
-              {/* 3D depth effect */}
-              <div
-                className="absolute inset-0 rounded-xl bg-gradient-to-br from-white/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100"
-                style={{ transform: "translateZ(10px)" }}
-              />
+                {/* Subtle shine effect */}
+                <div className="absolute inset-0 overflow-hidden rounded-xl opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent" />
+                </div>
+              </div>
             </motion.div>
           ))}
         </motion.div>

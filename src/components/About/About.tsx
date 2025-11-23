@@ -33,32 +33,32 @@ export default function About() {
 
   const features = [
     {
-      icon: <Layout className="h-6 w-6 text-blue-400" />,
+      icon: <Layout className="text-primary h-6 w-6" />,
       title: "Frontend Architecture",
       desc: "Build scalable and performant interfaces using React and Next.js with modular components, optimized rendering, and clean UI architecture.",
     },
     {
-      icon: <Code className="h-6 w-6 text-purple-400" />,
+      icon: <Code className="text-accent h-6 w-6" />,
       title: "Type-Safe & Maintainable Code",
       desc: "Write clean, type-safe TypeScript following industry best practices to ensure predictable behavior, maintainability, and long-term stability.",
     },
     {
-      icon: <Server className="h-6 w-6 text-green-400" />,
+      icon: <Server className="text-primary h-6 w-6" />,
       title: "Backend Engineering",
       desc: "Develop robust backend services using Node.js and Nest.js, implementing layered architectures, secure authentication, and high-performance REST APIs.",
     },
     {
-      icon: <Database className="h-6 w-6 text-orange-400" />,
+      icon: <Database className="text-accent h-6 w-6" />,
       title: "Database & ORM Expertise",
       desc: "Design efficient data models with MongoDB and PostgreSQL, using Prisma for schema management, migrations, and reliable type-safe database operations.",
     },
     {
-      icon: <Database className="h-6 w-6 text-yellow-400" />,
+      icon: <Database className="text-primary h-6 w-6" />,
       title: "End-to-End Full-Stack Development",
       desc: "Build complete full-stack systems—from database architecture to frontend delivery—ensuring cohesive workflows, scalability, and efficient development lifecycles.",
     },
     {
-      icon: <Gauge className="h-6 w-6 text-red-400" />,
+      icon: <Gauge className="text-destructive h-6 w-6" />,
       title: "Performance Optimization",
       desc: "Optimize application performance across backend and frontend through efficient queries, caching, lazy loading, and scalable architecture patterns.",
     },
@@ -69,15 +69,15 @@ export default function About() {
       {/* Background Wave Layers - Parallax */}
       <motion.div
         style={{ y: useTransform(scrollYProgress, [0, 1], [0, -100]) }}
-        className="absolute top-0 right-0 -z-10 h-96 w-96 rounded-full bg-purple-200/40 blur-3xl"
+        className="bg-primary/20 absolute top-0 right-0 -z-10 h-96 w-96 rounded-full blur-3xl"
       />
       <motion.div
         style={{ y: useTransform(scrollYProgress, [0, 1], [0, 100]) }}
-        className="absolute bottom-0 left-0 -z-10 h-96 w-96 rounded-full bg-blue-500/10 blur-3xl"
+        className="bg-accent/10 absolute bottom-0 left-0 -z-10 h-96 w-96 rounded-full blur-3xl"
       />
       <motion.div
         style={{ y: useTransform(scrollYProgress, [0, 1], [0, -50]) }}
-        className="absolute top-1/2 left-1/2 -z-10 h-64 w-64 rounded-full bg-purple-500/5 blur-3xl"
+        className="bg-primary/5 absolute top-1/2 left-1/2 -z-10 h-64 w-64 rounded-full blur-3xl"
       />
 
       {/* Floating Bubbles */}
@@ -85,7 +85,7 @@ export default function About() {
         {bubbles.map((bubble) => (
           <motion.div
             key={bubble.id}
-            className="absolute rounded-full border border-white/5 bg-gradient-to-br from-blue-500/60 to-blue-500/10 backdrop-blur-sm"
+            className="from-accent/60 to-accent/10 absolute rounded-full border border-white/5 bg-gradient-to-br backdrop-blur-sm"
             style={{
               left: `${bubble.x}%`,
               top: `${bubble.y}%`,
@@ -142,12 +142,12 @@ export default function About() {
             <div className="absolute -inset-[1px] rounded-2xl blur-sm transition-opacity duration-500" />
 
             {/* Outer glow */}
-            <div className="from-primary/10 absolute -inset-4 rounded-3xl bg-gradient-to-br via-transparent to-blue-500/10 opacity-0 blur-2xl transition-opacity duration-700 group-hover:opacity-100" />
+            <div className="from-primary/10 to-accent/10 absolute -inset-4 rounded-3xl bg-gradient-to-br via-transparent opacity-0 blur-2xl transition-opacity duration-700 group-hover:opacity-100" />
 
             {/* Glass card */}
             <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.08] via-white/[0.05] to-white/[0.02] p-8 shadow-2xl backdrop-blur-2xl md:p-10">
               {/* Inner shimmer effect */}
-              <div className="from-primary/5 absolute inset-0 bg-gradient-to-br via-transparent to-blue-500/5" />
+              <div className="from-primary/5 to-accent/5 absolute inset-0 bg-gradient-to-br via-transparent" />
 
               {/* Noise texture overlay */}
               <div
@@ -227,7 +227,7 @@ export default function About() {
                 viewport={{ once: true }}
                 transition={{ delay: 1 + index * 0.1, duration: 0.6, type: "spring" }}
                 whileHover={{ scale: 1.02, y: -2 }}
-                className="group bg-secondary/30 hover:border-primary/50 hover:bg-secondary/50 flex items-center gap-4 rounded-xl border border-purple-400/20 p-5 backdrop-blur-sm transition-all hover:shadow-[0_0_20px_rgba(151,71,255,0.4)]"
+                className="group bg-secondary/30 hover:border-primary/50 hover:bg-secondary/50 border-primary/20 flex items-center gap-4 rounded-xl border p-5 backdrop-blur-sm transition-all hover:shadow-[0_0_20px_hsl(var(--primary)/0.4)]"
               >
                 <motion.div
                   whileHover={{ rotate: 360, scale: 1.1 }}
@@ -235,7 +235,7 @@ export default function About() {
                   className="bg-background/50 relative rounded-lg p-3 shadow-sm"
                 >
                   {/* Icon glow */}
-                  <div className="from-primary/20 absolute inset-0 rounded-lg bg-gradient-to-br to-blue-500/20 opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-100" />
+                  <div className="from-primary/20 to-accent/20 absolute inset-0 rounded-lg bg-gradient-to-br opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-100" />
                   <div className="relative z-10">{feature.icon}</div>
                 </motion.div>
                 <div>

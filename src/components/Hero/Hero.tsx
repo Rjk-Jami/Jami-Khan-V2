@@ -44,7 +44,7 @@ export default function Hero() {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="absolute top-[-20%] left-[-10%] h-[60%] w-[60%] rounded-full bg-purple-500/20 blur-[120px] dark:bg-purple-500/50"
+          className="bg-primary/20 absolute top-[-20%] left-[-10%] h-[60%] w-[60%] rounded-full blur-[120px]"
         />
         <motion.div
           animate={{
@@ -57,7 +57,7 @@ export default function Hero() {
             ease: "easeInOut",
             delay: 2,
           }}
-          className="absolute right-[-10%] bottom-[-20%] h-[60%] w-[60%] rounded-full bg-blue-500/20 blur-[120px]"
+          className="bg-accent/20 absolute right-[-10%] bottom-[-20%] h-[60%] w-[60%] rounded-full blur-[120px]"
         />
         <motion.div
           animate={{
@@ -70,7 +70,7 @@ export default function Hero() {
             ease: "easeInOut",
             delay: 4,
           }}
-          className="absolute top-[40%] left-[50%] h-[50%] w-[50%] rounded-full bg-purple-500/20 blur-[100px] dark:bg-purple-500/15"
+          className="bg-primary/20 absolute top-[40%] left-[50%] h-[50%] w-[50%] rounded-full blur-[100px]"
         />
       </div>
 
@@ -79,7 +79,7 @@ export default function Hero() {
         {particles.map((p) => (
           <motion.div
             key={p.id}
-            className="absolute rounded-full bg-gradient-to-br from-blue-500/40 to-blue-500/40 backdrop-blur-sm"
+            className="from-accent/40 to-accent/40 absolute rounded-full bg-gradient-to-br backdrop-blur-sm"
             style={{
               left: `${p.x}%`,
               top: `${p.y}%`,
@@ -127,7 +127,7 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.5 }}
               transition={{ delay: 0.5, duration: 1 }}
-              className="from-primary/30 absolute inset-0 bg-gradient-to-r to-blue-500/30 blur-3xl"
+              className="from-primary/30 to-accent/30 absolute inset-0 bg-gradient-to-r blur-3xl"
             />
             <h1 className="relative pb-2 text-4xl font-bold tracking-tight md:text-6xl 2xl:text-7xl">
               <motion.span
