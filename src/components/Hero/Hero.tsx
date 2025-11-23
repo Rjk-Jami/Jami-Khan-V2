@@ -16,12 +16,12 @@ export default function Hero() {
   >([]);
 
   useEffect(() => {
-    const newParticles = Array.from({ length: 50 }).map((_, i) => ({
+    const newParticles = Array.from({ length: 100 }).map((_, i) => ({
       id: i,
-      x: Math.random() * 100,
-      y: Math.random() * 100,
-      size: Math.random() * 6 + 2,
-      duration: Math.random() * 15 + 15,
+      x: Math.random() * 100, // percentage
+      y: Math.random() * 100, // percentage
+      size: Math.random() * 6 + 5,
+      duration: Math.random() * 10 + 10,
       delay: Math.random() * 5,
     }));
     setParticles(newParticles);
@@ -44,7 +44,7 @@ export default function Hero() {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="bg-primary/20 absolute top-[-20%] left-[-10%] h-[60%] w-[60%] rounded-full blur-[120px]"
+          className="absolute top-[-20%] left-[-10%] h-[60%] w-[60%] rounded-full bg-purple-500/70 blur-[120px] 2xl:blur-[150px]"
         />
         <motion.div
           animate={{
@@ -57,7 +57,7 @@ export default function Hero() {
             ease: "easeInOut",
             delay: 2,
           }}
-          className="bg-accent/20 absolute right-[-10%] bottom-[-20%] h-[60%] w-[60%] rounded-full blur-[120px]"
+          className="absolute right-[-10%] bottom-[-20%] h-[60%] w-[60%] rounded-full bg-blue-500/70 blur-[120px] 2xl:blur-[150px]"
         />
         <motion.div
           animate={{
@@ -70,7 +70,7 @@ export default function Hero() {
             ease: "easeInOut",
             delay: 4,
           }}
-          className="bg-primary/20 absolute top-[40%] left-[50%] h-[50%] w-[50%] rounded-full blur-[100px]"
+          className="absolute top-[40%] left-[50%] h-[50%] w-[50%] rounded-full bg-emerald-300/70 blur-[100px]"
         />
       </div>
 
@@ -79,7 +79,7 @@ export default function Hero() {
         {particles.map((p) => (
           <motion.div
             key={p.id}
-            className="from-accent/40 to-accent/40 absolute rounded-full bg-gradient-to-br backdrop-blur-sm"
+            className="absolute rounded-full bg-gradient-to-br from-purple-500/40 to-purple-500/40 backdrop-blur-sm"
             style={{
               left: `${p.x}%`,
               top: `${p.y}%`,
@@ -170,7 +170,7 @@ export default function Hero() {
               href="#projects"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="group bg-primary text-primary-foreground shadow-primary/25 hover:shadow-primary/40 relative overflow-hidden rounded-full px-8 py-4 font-medium shadow-lg transition-all hover:shadow-xl"
+              className="group text-primary-foreground relative overflow-hidden rounded-full bg-white/10 px-8 py-4 font-medium shadow-lg transition-all hover:shadow-xl hover:shadow-purple-500/10"
             >
               <motion.div
                 className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent"
@@ -214,7 +214,7 @@ export default function Hero() {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="bg-primary shadow-primary/50 h-1.5 w-1.5 rounded-full shadow-lg"
+            className="h-1.5 w-1.5 rounded-full bg-white shadow-2xl shadow-purple-500/50"
           />
         </div>
       </motion.a>
