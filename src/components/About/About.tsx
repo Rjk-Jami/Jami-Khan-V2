@@ -25,7 +25,7 @@ export default function About() {
       x: Math.random() * 100,
       y: Math.random() * 100,
       size: Math.random() * 80 + 40,
-      duration: Math.random() * 20 + 20,
+      duration: Math.random() * 10 + 10,
       delay: Math.random() * 5,
     }));
     setBubbles(newBubbles);
@@ -69,15 +69,15 @@ export default function About() {
       {/* Background Wave Layers - Parallax */}
       <motion.div
         style={{ y: useTransform(scrollYProgress, [0, 1], [0, -100]) }}
-        className="bg-primary/20 absolute top-0 right-0 -z-10 h-96 w-96 rounded-full blur-3xl"
+        className="absolute top-0 right-0 -z-10 h-96 w-96 rounded-full bg-indigo-500/10 blur-3xl"
       />
       <motion.div
         style={{ y: useTransform(scrollYProgress, [0, 1], [0, 100]) }}
-        className="bg-accent/10 absolute bottom-0 left-0 -z-10 h-96 w-96 rounded-full blur-3xl"
+        className="absolute bottom-0 left-0 -z-10 h-96 w-96 rounded-full bg-emerald-500/10 blur-3xl"
       />
       <motion.div
         style={{ y: useTransform(scrollYProgress, [0, 1], [0, -50]) }}
-        className="bg-primary/5 absolute top-1/2 left-1/2 -z-10 h-64 w-64 rounded-full blur-3xl"
+        className="bg-purle-500/5 absolute top-1/2 left-1/2 -z-10 h-64 w-64 rounded-full blur-3xl"
       />
 
       {/* Floating Bubbles */}
@@ -85,7 +85,7 @@ export default function About() {
         {bubbles.map((bubble) => (
           <motion.div
             key={bubble.id}
-            className="from-accent/60 to-accent/10 absolute rounded-full border border-white/5 bg-gradient-to-br backdrop-blur-sm"
+            className="absolute rounded-full border border-white/5 bg-gradient-to-r from-purple-500/50 to-white/5 backdrop-blur-sm"
             style={{
               left: `${bubble.x}%`,
               top: `${bubble.y}%`,
@@ -121,13 +121,6 @@ export default function About() {
             >
               About Me
             </motion.h2>
-            <motion.div
-              initial={{ scaleX: 0 }}
-              whileInView={{ scaleX: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="bg-primary mx-auto h-1 w-20 origin-left rounded-full md:mx-0"
-            />
           </div>
 
           {/* Content Card - Enhanced Glassmorphism */}
@@ -159,7 +152,8 @@ export default function About() {
               />
 
               {/* Content */}
-              <div className="relative z-10 space-y-6">
+
+              <div className="relative z-10 space-y-4">
                 <motion.p
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
@@ -172,12 +166,11 @@ export default function About() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.6, duration: 0.6 }}
-                    className="mb-4 block"
+                    className="mb-2 block"
                   >
-                    I build modern, responsive web applications with{" "}
+                    I build modern, responsive frontend applications with{" "}
                     <span className="text-primary font-semibold">React.js</span> and{" "}
-                    <span className="text-primary font-semibold">Next.js</span>, turning ideas into
-                    seamless user experiences.
+                    <span className="text-primary font-semibold">Next.js</span>.
                   </motion.span>
 
                   <motion.span
@@ -185,10 +178,10 @@ export default function About() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.7, duration: 0.6 }}
-                    className="mb-4 block"
+                    className="mb-2 block"
                   >
-                    I focus on writing clean, maintainable code, optimizing performance, and
-                    ensuring scalable frontend architectures.
+                    I write clean, maintainable code, optimize performance, and create scalable
+                    frontend architectures.
                   </motion.span>
 
                   <motion.span
@@ -196,21 +189,10 @@ export default function About() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.8, duration: 0.6 }}
-                    className="mb-4 block"
-                  >
-                    From implementing dynamic interfaces to integrating backend APIs, I bridge
-                    design and development to deliver reliable, user-friendly solutions.
-                  </motion.span>
-
-                  <motion.span
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.9, duration: 0.6 }}
                     className="block"
                   >
-                    Passionate about learning new technologies, I constantly refine my skills and
-                    contribute to projects that make an impact.
+                    From dynamic interfaces to seamless API integration, I deliver reliable and
+                    engaging user experiences.
                   </motion.span>
                 </motion.p>
               </div>
