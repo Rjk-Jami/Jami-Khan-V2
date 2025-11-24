@@ -62,11 +62,11 @@ export default function PortfolioContent() {
             <Hero />
           </section>
 
-          <section id="about" className="flex min-h-screen items-center py-10">
+          <section id="about" className="flex min-h-screen py-10">
             <About />
           </section>
 
-          <section id="skills" className="flex min-h-screen items-center py-10">
+          <section id="skills" className="flex min-h-screen py-10">
             <Skills />
           </section>
 
