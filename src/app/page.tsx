@@ -1,14 +1,18 @@
 "use client";
 
 import Navigation from "@/components/Navigation/Navigation";
+import Hero from "@/components/Hero/Hero";
+import About from "@/components/About/About";
+import Skills from "@/components/Skills/Skills";
+import Experience from "@/components/Experience/Experience";
+import Projects from "@/components/Projects/Projects";
+import Education from "@/components/Education/Education";
+import Contact from "@/components/Contact/Contact";
 import ProfileCard from "@/components/ProfileCard/ProfileCard";
-import Hero from "@/components/Sections/Hero/Hero";
-import { useTheme } from "@/contextProvider/ThemeProvider";
 import { useState, useEffect } from "react";
 
 export default function PortfolioContent() {
   const [activeSection, setActiveSection] = useState("hero");
-  const { theme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,10 +31,7 @@ export default function PortfolioContent() {
         const element = document.getElementById(section);
         if (element) {
           const { offsetTop, offsetHeight } = element;
-          if (
-            currentPosition >= offsetTop &&
-            currentPosition < offsetTop + offsetHeight
-          ) {
+          if (currentPosition >= offsetTop && currentPosition < offsetTop + offsetHeight) {
             setActiveSection(section);
             break;
           }
@@ -43,62 +44,46 @@ export default function PortfolioContent() {
   }, []);
 
   return (
-    <main
-      className={`relative min-h-screen overflow-x-hidden transition-colors duration-300 ${
-        theme === "dark"
-          ? "bg-black text-white"
-          : "bg-gradient-to-br from-gray-50 to-white text-gray-900"
-      }`}
-    >
+    <main className="bg-background text-foreground relative min-h-screen w-full overflow-x-hidden transition-colors duration-300">
       <Navigation activeSection={activeSection} />
 
-      <div className="flex flex-col xl:flex-row xl:gap-16 relative max-w-7xl mx-auto">
-        
+      <div className="relative flex w-full flex-col xl:flex-row">
         {/* Fixed Profile Card */}
-        <div className="xl:w-4/12 mb-7 xl:mb-0">
+        <div className="!2xl:w-4/12 mb-7 xl:mb-0 xl:w-3/11">
           <ProfileCard />
         </div>
 
         {/* Main Content */}
-        <div className="flex-1 z-10 mobile-padding">
-          <section id="hero" className="min-h-screen flex items-center">
+        <div className="mobile-padding z-10 flex-1">
+          {/* ... existing imports */}
+
+          {/* ... inside component */}
+          <section id="hero" className="flex min-h-screen items-center">
             <Hero />
           </section>
 
-          <section id="about" className="min-h-screen flex items-center py-20">
-            {/* <About /> */}
+          <section id="about" className="flex min-h-screen items-center py-10">
+            <About />
           </section>
 
-          <section id="skills" className="min-h-screen flex items-center py-20">
-            {/* <Skills /> */}
+          <section id="skills" className="flex min-h-screen items-center py-10">
+            <Skills />
           </section>
 
-          <section
-            id="experience"
-            className="min-h-screen flex items-center py-20"
-          >
-            {/* <Experience /> */}
+          <section id="experience" className="flex min-h-screen items-center py-10">
+            <Experience />
           </section>
 
-          <section
-            id="projects"
-            className="min-h-screen flex items-center py-20"
-          >
-            {/* <Projects /> */}
+          <section id="projects" className="flex min-h-screen items-center py-10">
+            <Projects />
           </section>
 
-          <section
-            id="education"
-            className="min-h-screen flex items-center py-20"
-          >
-            {/* <Education /> */}
+          <section id="education" className="flex min-h-screen items-center py-10">
+            <Education />
           </section>
 
-          <section
-            id="contact"
-            className="min-h-screen flex items-center py-20"
-          >
-            {/* <Contact /> */}
+          <section id="contact" className="flex min-h-screen items-center py-10">
+            <Contact />
           </section>
         </div>
       </div>
