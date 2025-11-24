@@ -65,7 +65,7 @@ export default function About() {
   ];
 
   return (
-    <section ref={ref} className="relative w-full px-6">
+    <section ref={ref} className="relative mx-auto w-full max-w-5xl px-6">
       {/* Background Wave Layers - Parallax */}
       <motion.div
         style={{ y: useTransform(scrollYProgress, [0, 1], [0, -100]) }}
@@ -111,7 +111,7 @@ export default function About() {
       <div className="mx-auto max-w-3xl lg:mr-10 lg:ml-10 2xl:mx-auto 2xl:max-w-5xl">
         <motion.div style={{ opacity, y }} className="space-y-12">
           {/* Header */}
-          <div className="space-y-4 text-center md:text-left">
+          <div className="text-center md:text-left">
             <motion.h2
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
