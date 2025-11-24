@@ -9,6 +9,7 @@ import Projects from "@/components/Projects/Projects";
 import Education from "@/components/Education/Education";
 import Contact from "@/components/Contact/Contact";
 import ProfileCard from "@/components/ProfileCard/ProfileCard";
+import { SkillsProvider } from "@/contexts/SkillsContext";
 import { useState, useEffect } from "react";
 
 export default function PortfolioContent() {
@@ -67,7 +68,9 @@ export default function PortfolioContent() {
           </section>
 
           <section id="skills" className="flex min-h-screen py-10">
-            <Skills />
+            <SkillsProvider>
+              <Skills />
+            </SkillsProvider>
           </section>
 
           <section id="experience" className="flex min-h-screen items-center py-10">
