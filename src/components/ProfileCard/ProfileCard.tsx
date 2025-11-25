@@ -20,7 +20,7 @@ export default function ProfileCard() {
         {/* Profile Image */}
         <div className="relative mb-6">
           <div className="relative mx-auto h-48 w-48">
-            <div className="from-primary to-accent animate-pulse-slow absolute inset-0 rounded-full bg-gradient-to-r opacity-40 blur-xl"></div>
+            <div className="from-primary to-accent absolute inset-0 rounded-full bg-gradient-to-r opacity-30 blur-xl"></div>
 
             <div className="border-primary/30 relative h-full w-full overflow-hidden rounded-full border-4">
               <Image src={profilePic} alt="Jami Khan" className="object-cover" priority />

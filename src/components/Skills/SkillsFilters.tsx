@@ -18,7 +18,7 @@ export function SkillsFilters() {
   return (
     <div className="space-y-4">
       {/* Category Filter */}
-      <div className="space-y-2">
+      <div className="hidden space-y-2 md:block">
         {viewMode === "list" && (
           <label className="text-muted-foreground text-sm font-medium">Category</label>
         )}
@@ -40,7 +40,7 @@ export function SkillsFilters() {
       </div>
 
       {/* Expertise Filter */}
-      <div className="space-y-2">
+      <div className="hidden space-y-2 md:block">
         {viewMode === "list" && (
           <label className="text-muted-foreground text-sm font-medium">Expertise Level</label>
         )}
@@ -58,7 +58,7 @@ export function SkillsFilters() {
                   isSelected
                     ? isAll
                       ? "border-primary/70 bg-primary text-primary-foreground shadow-primary/30 ring-primary/20 shadow-lg ring-2"
-                      : `${colors?.border.replace("/30", "/70")} ${colors?.bg.replace("/10", "/20")} ${colors?.text} shadow-lg ring-2 ${colors?.border.replace("border-", "ring-").replace("/30", "/20")}`
+                      : `${colors?.border.replace("/30", "/70")} ${colors?.bg.replace("/10", "/20")} ${colors?.text} shadow-lg ring-2 ${colors?.border.replace("border-", "ring-").replace("/30", "/20")} `
                     : "border-border/50 bg-card/40 text-muted-foreground hover:border-primary/50 hover:bg-card/60 hover:text-foreground backdrop-blur-sm"
                 }`}
               >

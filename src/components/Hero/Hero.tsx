@@ -5,11 +5,11 @@ import { Mail, Code2, Sparkles } from "lucide-react";
 export default function Hero() {
   return (
     <section className="bg-background perspective-1000 relative flex min-h-screen w-full items-center justify-center">
-      {/* Background Gradients - Soft pulsing blobs */}
+      {/* Background Gradients - Optimized for mobile */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute top-[-20%] left-[-10%] h-[60%] w-[60%] rounded-full bg-purple-500/70 blur-[120px] 2xl:blur-[250px]" />
-        <div className="absolute right-[-10%] bottom-[-20%] h-[60%] w-[60%] rounded-full bg-blue-500/70 blur-[220px] 2xl:blur-[250px]" />
-        <div className="absolute top-[40%] left-[50%] h-[50%] w-[50%] rounded-full bg-emerald-300/70 blur-[500px]" />
+        <div className="absolute top-[-20%] left-[-10%] h-[60%] w-[60%] rounded-full bg-purple-500/40 blur-3xl lg:blur-[120px] 2xl:blur-[150px]" />
+        <div className="absolute right-[-10%] bottom-[-20%] h-[60%] w-[60%] rounded-full bg-blue-500/40 blur-3xl lg:blur-[120px] 2xl:blur-[150px]" />
+        <div className="absolute top-[40%] left-[50%] h-[50%] w-[50%] rounded-full bg-emerald-300/40 blur-2xl lg:blur-[100px]" />
       </div>
 
       {/* Main Content */}

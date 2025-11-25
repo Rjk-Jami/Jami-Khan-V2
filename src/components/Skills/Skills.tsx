@@ -10,10 +10,10 @@ export default function Skills() {
 
   return (
     <section className="relative mx-auto w-full max-w-5xl px-6" id="skills" ref={ref}>
-      {/* Background gradient blobs */}
+      {/* Background gradient blobs - Optimized for mobile */}
       <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="bg-primary/10 absolute top-[-20%] left-[-10%] h-[60%] w-[60%] rounded-full blur-[120px]" />
-        <div className="bg-accent/10 absolute right-[-10%] bottom-[-20%] h-[60%] w-[60%] rounded-full blur-[120px]" />
+        <div className="absolute top-[-20%] left-[-10%] h-[60%] w-[60%] rounded-full bg-indigo-500/30 blur-3xl lg:blur-[120px]" />
+        <div className="absolute right-[-10%] bottom-[-20%] h-[60%] w-[60%] rounded-full bg-blue-500/20 blur-3xl lg:blur-[120px]" />
       </div>
 
       {/* Subtle grid pattern */}
@@ -29,7 +29,7 @@ export default function Skills() {
       </div>
 
       <div className="mx-auto max-w-3xl lg:mr-10 lg:ml-10 2xl:mx-auto 2xl:max-w-5xl">
-        <div className="space-y-8">
+        <div className="space-y-4 md:space-y-8">
           <SkillsHeader />
           <SkillsFilters />
           <SkillsGrid />

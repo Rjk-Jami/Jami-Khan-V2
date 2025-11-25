@@ -8,13 +8,13 @@ export function SkillsHeader() {
   const { viewMode, setViewMode, gridSize, setGridSize } = useSkills();
 
   return (
-    <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+    <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between md:gap-6">
       <h2 className="text-center text-3xl font-bold md:text-left md:text-4xl">
         Skills & Technologies
       </h2>
 
       {/* View Controls */}
-      <div className="flex items-center justify-center gap-2">
+      <div className="flex items-center justify-end gap-2 md:justify-center">
         {/* View Mode Toggle */}
         <div className="border-border/50 bg-card/40 flex gap-1 rounded-lg border p-1 backdrop-blur-sm">
           <button
@@ -43,7 +43,7 @@ export function SkillsHeader() {
 
         {/* Grid Size Selector (only visible in grid mode) */}
         {viewMode === "grid" && (
-          <div className="border-border/50 bg-card/40 flex gap-1 rounded-lg border p-1 backdrop-blur-sm transition-opacity">
+          <div className="border-border/50 bg-card/40 hidden gap-1 rounded-lg border p-1 backdrop-blur-sm transition-opacity md:flex">
             {[4, 5, 6].map((size) => (
               <button
                 key={size}

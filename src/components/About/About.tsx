@@ -38,10 +38,10 @@ export default function About() {
 
   return (
     <section className="relative mx-auto w-full max-w-5xl px-6">
-      {/* Background Wave Layers */}
-      <div className="absolute top-0 right-0 -z-10 h-96 w-96 rounded-full bg-indigo-500/60 blur-[200px]" />
-      <div className="absolute bottom-0 left-0 -z-10 h-96 w-96 rounded-full bg-emerald-500 blur-[200px]" />
-      <div className="absolute top-1/2 left-1/2 -z-10 h-64 w-64 rounded-full bg-purple-500/80 blur-[200px]" />
+      {/* Background Wave Layers - Optimized for mobile */}
+      <div className="absolute top-0 right-0 -z-10 h-96 w-96 rounded-full bg-indigo-500/40 blur-3xl lg:bg-indigo-500/60 lg:blur-[120px]" />
+      <div className="absolute bottom-0 left-0 -z-10 h-96 w-96 rounded-full bg-emerald-500/40 blur-3xl lg:bg-emerald-500/40 lg:blur-[120px]" />
+      <div className="absolute top-1/2 left-1/2 -z-10 h-64 w-64 rounded-full bg-purple-500/40 blur-3xl lg:bg-purple-500/70 lg:blur-[120px]" />
 
       <div className="mx-auto max-w-3xl lg:mr-10 lg:ml-10 2xl:mx-auto 2xl:max-w-5xl">
         <div className="space-y-12">
@@ -59,7 +59,7 @@ export default function About() {
             <div className="from-primary/10 to-accent/10 absolute -inset-4 rounded-3xl bg-gradient-to-br via-transparent opacity-0 blur-2xl transition-opacity duration-700 group-hover:opacity-100" />
 
             {/* Glass card */}
-            <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.08] via-white/[0.05] to-white/[0.02] p-8 shadow-2xl backdrop-blur-2xl md:p-10">
+            <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.08] via-white/[0.05] to-white/[0.02] p-8 shadow-2xl backdrop-blur-md md:p-10 lg:backdrop-blur-2xl">
               {/* Inner shimmer effect */}
               <div className="from-primary/5 to-accent/5 absolute inset-0 bg-gradient-to-br via-transparent" />
 
@@ -103,14 +103,16 @@ export default function About() {
                 key={index}
                 className="group bg-secondary/30 hover:border-primary/50 hover:bg-secondary/50 border-primary/20 flex items-center gap-4 rounded-xl border p-5 backdrop-blur-sm transition-all hover:shadow-[0_0_20px_hsl(var(--primary)/0.4)]"
               >
-                <div className="bg-background/50 relative rounded-lg p-3 shadow-sm">
-                  {/* Icon glow */}
-                  <div className="from-primary/20 to-accent/20 absolute inset-0 rounded-lg bg-gradient-to-br opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-100" />
-                  <div className="relative z-10">{feature.icon}</div>
-                </div>
                 <div>
-                  <h3 className="text-foreground font-semibold">{feature.title}</h3>
-                  <p className="text-muted-foreground text-sm">{feature.desc}</p>
+                  <div className="flex items-center gap-4">
+                    <div className="bg-background/50 relative rounded-lg p-2 shadow-sm">
+                      {/* Icon glow */}
+                      <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-blue-500/20 to-blue-500/20 opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-100" />
+                      <div className="relative z-10">{feature.icon}</div>
+                    </div>
+                    <h3 className="text-foreground font-semibold">{feature.title}</h3>
+                  </div>
+                  <p className="text-muted-foreground text-justify text-sm">{feature.desc}</p>
                 </div>
               </div>
             ))}
