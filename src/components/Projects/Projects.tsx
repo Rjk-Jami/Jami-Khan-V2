@@ -1,8 +1,6 @@
 "use client";
 
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
-import { useRef } from "react";
 
 const projects = [
   {
@@ -41,60 +39,9 @@ const projects = [
 ];
 
 function ProjectCard({ project, index }: { project: (typeof projects)[0]; index: number }) {
-  const ref = useRef<HTMLDivElement>(null);
-
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-
-  const mouseXSpring = useSpring(x);
-  const mouseYSpring = useSpring(y);
-
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["17.5deg", "-17.5deg"]);
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-17.5deg", "17.5deg"]);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!ref.current) return;
-
-    const rect = ref.current.getBoundingClientRect();
-
-    const width = rect.width;
-    const height = rect.height;
-
-    const mouseX = e.clientX - rect.left;
-    const mouseY = e.clientY - rect.top;
-
-    const xPct = mouseX / width - 0.5;
-    const yPct = mouseY / height - 0.5;
-
-    x.set(xPct);
-    y.set(yPct);
-  };
-
-  const handleMouseLeave = () => {
-    x.set(0);
-    y.set(0);
-  };
-
   return (
-    <motion.div
-      ref={ref}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.2 }}
-      style={{
-        rotateX,
-        rotateY,
-        transformStyle: "preserve-3d",
-      }}
-      className="bg-secondary/20 group perspective-1000 relative h-[400px] w-full rounded-xl border border-white/5"
-    >
-      <div
-        style={{ transform: "translateZ(75px)", transformStyle: "preserve-3d" }}
-        className="bg-background/80 absolute inset-4 flex flex-col justify-between rounded-xl border border-white/10 p-6 shadow-xl backdrop-blur-sm"
-      >
+    <div className="bg-secondary/20 group perspective-1000 relative h-[400px] w-full rounded-xl border border-white/5">
+      <div className="bg-background/80 absolute inset-4 flex flex-col justify-between rounded-xl border border-white/10 p-6 shadow-xl backdrop-blur-sm">
         {/* Header */}
         <div className="flex items-start justify-between">
           <div>
@@ -145,7 +92,7 @@ function ProjectCard({ project, index }: { project: (typeof projects)[0]; index:
           className={`absolute inset-0 rounded-xl bg-gradient-to-r ${project.color} -z-10 opacity-0 transition-opacity group-hover:opacity-5`}
         />
       </div>
-    </motion.div>
+    </div>
   );
 }
 
@@ -153,18 +100,13 @@ export default function Projects() {
   return (
     <section className="w-full px-6 py-20">
       <div className="mx-auto max-w-6xl space-y-16">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="space-y-4 text-center"
-        >
+        <div className="space-y-4 text-center">
           <h2 className="text-3xl font-bold md:text-4xl">Featured Projects</h2>
           <div className="bg-primary mx-auto h-1 w-20 rounded-full" />
           <p className="text-muted-foreground mx-auto max-w-2xl">
             A collection of projects that showcase my passion for building digital experiences.
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (

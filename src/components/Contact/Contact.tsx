@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
 import { Mail, Send, User, MessageSquare } from "lucide-react";
 
 export default function Contact() {
@@ -18,88 +17,32 @@ export default function Contact() {
     }, 3000);
   };
 
-  // Floating particles
-  const particles = Array.from({ length: 30 }).map((_, i) => ({
-    id: i,
-    x: Math.random() * 100,
-    y: Math.random() * 100,
-    size: Math.random() * 3 + 1,
-    duration: Math.random() * 20 + 20,
-    delay: Math.random() * 5,
-  }));
-
   return (
     <section className="relative w-full overflow-hidden px-6 py-20">
       {/* Dark gradient background */}
       <div className="from-background via-background to-primary/5 absolute inset-0 -z-20 bg-gradient-to-br" />
 
-      {/* Drifting star-like particles */}
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        {particles.map((p) => (
-          <motion.div
-            key={p.id}
-            className="bg-accent absolute rounded-full"
-            style={{
-              left: `${p.x}%`,
-              top: `${p.y}%`,
-              width: p.size,
-              height: p.size,
-            }}
-            animate={{
-              y: [0, -100, 0],
-              x: [0, Math.sin(p.id) * 30, 0],
-              opacity: [0, 0.6, 0],
-            }}
-            transition={{
-              duration: p.duration,
-              repeat: Infinity,
-              ease: "linear",
-              delay: p.delay,
-            }}
-          />
-        ))}
-      </div>
-
       <div className="mx-auto max-w-2xl space-y-12">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="space-y-4 text-center"
-        >
+        <div className="space-y-4 text-center">
           <h2 className="text-3xl font-bold md:text-4xl">Get In Touch</h2>
-          <motion.div
-            initial={{ scaleX: 0 }}
-            whileInView={{ scaleX: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="bg-primary mx-auto h-1 w-20 rounded-full"
-          />
+          <div className="bg-primary mx-auto h-1 w-20 rounded-full" />
           <p className="text-muted-foreground mx-auto max-w-xl">
             Have a project in mind or just want to chat? Feel free to reach out!
           </p>
-        </motion.div>
+        </div>
 
         {/* Form */}
-        <motion.form
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4, duration: 0.8 }}
-          onSubmit={handleSubmit}
-          className="relative space-y-6"
-        >
+        <form onSubmit={handleSubmit} className="relative space-y-6">
           {/* Name Field */}
-          <motion.div className="relative">
-            <motion.div
-              animate={{
+          <div className="relative">
+            <div
+              className="bg-secondary/20 relative overflow-hidden rounded-xl border-2 backdrop-blur-sm"
+              style={{
                 borderColor:
                   focusedField === "name" ? "hsl(var(--primary))" : "rgba(255,255,255,0.1)",
                 boxShadow: focusedField === "name" ? "0 0 20px hsl(var(--primary) / 0.3)" : "none",
               }}
-              className="bg-secondary/20 relative overflow-hidden rounded-xl border-2 backdrop-blur-sm"
             >
               <User className="text-muted-foreground pointer-events-none absolute top-1/2 left-4 h-5 w-5 -translate-y-1/2" />
               <input
@@ -112,28 +55,30 @@ export default function Contact() {
                 className="text-foreground placeholder:text-muted-foreground/50 w-full bg-transparent px-12 py-4 outline-none"
                 placeholder="Your Name"
               />
-            </motion.div>
-            <motion.label
-              animate={{
-                y: focusedField === "name" || formData.name ? -32 : 0,
-                scale: focusedField === "name" || formData.name ? 0.85 : 1,
+            </div>
+            <label
+              className="text-primary pointer-events-none absolute top-4 left-3 text-sm font-medium transition-all"
+              style={{
+                transform:
+                  focusedField === "name" || formData.name
+                    ? "translateY(-32px) scale(0.85)"
+                    : "translateY(0) scale(1)",
                 opacity: focusedField === "name" || formData.name ? 1 : 0,
               }}
-              className="text-primary pointer-events-none absolute top-4 left-3 text-sm font-medium"
             >
               Name
-            </motion.label>
-          </motion.div>
+            </label>
+          </div>
 
           {/* Email Field */}
-          <motion.div className="relative">
-            <motion.div
-              animate={{
+          <div className="relative">
+            <div
+              className="bg-secondary/20 relative overflow-hidden rounded-xl border-2 backdrop-blur-sm"
+              style={{
                 borderColor:
                   focusedField === "email" ? "hsl(var(--primary))" : "rgba(255,255,255,0.1)",
                 boxShadow: focusedField === "email" ? "0 0 20px hsl(var(--primary) / 0.3)" : "none",
               }}
-              className="bg-secondary/20 relative overflow-hidden rounded-xl border-2 backdrop-blur-sm"
             >
               <Mail className="text-muted-foreground pointer-events-none absolute top-1/2 left-4 h-5 w-5 -translate-y-1/2" />
               <input
@@ -146,29 +91,31 @@ export default function Contact() {
                 className="text-foreground placeholder:text-muted-foreground/50 w-full bg-transparent px-12 py-4 outline-none"
                 placeholder="your.email@example.com"
               />
-            </motion.div>
-            <motion.label
-              animate={{
-                y: focusedField === "email" || formData.email ? -32 : 0,
-                scale: focusedField === "email" || formData.email ? 0.85 : 1,
+            </div>
+            <label
+              className="text-primary pointer-events-none absolute top-4 left-3 text-sm font-medium transition-all"
+              style={{
+                transform:
+                  focusedField === "email" || formData.email
+                    ? "translateY(-32px) scale(0.85)"
+                    : "translateY(0) scale(1)",
                 opacity: focusedField === "email" || formData.email ? 1 : 0,
               }}
-              className="text-primary pointer-events-none absolute top-4 left-3 text-sm font-medium"
             >
               Email
-            </motion.label>
-          </motion.div>
+            </label>
+          </div>
 
           {/* Message Field */}
-          <motion.div className="relative">
-            <motion.div
-              animate={{
+          <div className="relative">
+            <div
+              className="bg-secondary/20 relative overflow-hidden rounded-xl border-2 backdrop-blur-sm"
+              style={{
                 borderColor:
                   focusedField === "message" ? "hsl(var(--primary))" : "rgba(255,255,255,0.1)",
                 boxShadow:
                   focusedField === "message" ? "0 0 20px hsl(var(--primary) / 0.3)" : "none",
               }}
-              className="bg-secondary/20 relative overflow-hidden rounded-xl border-2 backdrop-blur-sm"
             >
               <MessageSquare className="text-muted-foreground pointer-events-none absolute top-6 left-4 h-5 w-5" />
               <textarea
@@ -181,63 +128,43 @@ export default function Contact() {
                 className="text-foreground placeholder:text-muted-foreground/50 w-full resize-none bg-transparent px-12 py-4 outline-none"
                 placeholder="Your message..."
               />
-            </motion.div>
-            <motion.label
-              animate={{
-                y: focusedField === "message" || formData.message ? -32 : 0,
-                scale: focusedField === "message" || formData.message ? 0.85 : 1,
+            </div>
+            <label
+              className="text-primary pointer-events-none absolute top-4 left-3 text-sm font-medium transition-all"
+              style={{
+                transform:
+                  focusedField === "message" || formData.message
+                    ? "translateY(-32px) scale(0.85)"
+                    : "translateY(0) scale(1)",
                 opacity: focusedField === "message" || formData.message ? 1 : 0,
               }}
-              className="text-primary pointer-events-none absolute top-4 left-3 text-sm font-medium"
             >
               Message
-            </motion.label>
-          </motion.div>
+            </label>
+          </div>
 
           {/* Submit Button */}
-          <motion.button
+          <button
             type="submit"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="group bg-primary text-primary-foreground shadow-primary/25 relative w-full overflow-hidden rounded-xl px-8 py-4 font-medium shadow-lg"
+            className="group bg-primary text-primary-foreground shadow-primary/25 relative w-full overflow-hidden rounded-xl px-8 py-4 font-medium shadow-lg transition-transform hover:scale-[1.02] active:scale-[0.98]"
           >
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent"
-              initial={{ x: "-100%" }}
-              whileHover={{ x: "100%" }}
-              transition={{ duration: 0.5 }}
-            />
-            <motion.span
-              className="relative flex items-center justify-center gap-2"
-              animate={{
-                scale: submitted ? [1, 1.1, 1] : 1,
-              }}
-            >
+            <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent" />
+            <span className="relative flex items-center justify-center gap-2">
               {submitted ? "Message Sent!" : "Send Message"}
-              <motion.div
-                animate={{
-                  x: submitted ? [0, 5, 0] : 0,
-                }}
-                transition={{ duration: 0.5, repeat: submitted ? Infinity : 0 }}
-              >
+              <div>
                 <Send className="h-4 w-4" />
-              </motion.div>
-            </motion.span>
-          </motion.button>
-        </motion.form>
+              </div>
+            </span>
+          </button>
+        </form>
 
         {/* Success Message */}
         {submitted && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.8 }}
-            className="bg-primary/10 border-primary/30 rounded-xl border p-6 text-center"
-          >
+          <div className="bg-primary/10 border-primary/30 rounded-xl border p-6 text-center transition-opacity">
             <p className="text-primary font-medium">
               Thank you for reaching out! I&apos;ll get back to you soon.
             </p>
-          </motion.div>
+          </div>
         )}
       </div>
     </section>

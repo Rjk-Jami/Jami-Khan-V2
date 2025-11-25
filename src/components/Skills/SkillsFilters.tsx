@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { useSkills } from "@/contexts/SkillsContext";
 import type { ExpertiseLevel } from "@/contexts/SkillsContext";
 
@@ -17,13 +16,7 @@ export function SkillsFilters() {
   } = useSkills();
   //filters
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6, delay: 0.2 }}
-      className="space-y-4"
-    >
+    <div className="space-y-4">
       {/* Category Filter */}
       <div className="space-y-2">
         {viewMode === "list" && (
@@ -75,6 +68,6 @@ export function SkillsFilters() {
           })}
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }

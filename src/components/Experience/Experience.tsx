@@ -1,7 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { useRef } from "react";
 import { Briefcase, Calendar } from "lucide-react";
 
 const experiences = [
@@ -17,20 +15,13 @@ const experiences = [
 ];
 
 export default function Experience() {
-  const containerRef = useRef<HTMLDivElement>(null);
-
   return (
-    <section ref={containerRef} className="w-full px-6 py-20">
+    <section className="w-full px-6 py-20">
       <div className="mx-auto max-w-4xl space-y-16">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="space-y-4 text-center md:text-left"
-        >
+        <div className="space-y-4 text-center md:text-left">
           <h2 className="text-3xl font-bold md:text-4xl">Work Experience</h2>
           <div className="bg-primary mx-auto h-1 w-20 rounded-full md:mx-0" />
-        </motion.div>
+        </div>
 
         <div className="relative">
           {/* Vertical Line */}
@@ -38,23 +29,15 @@ export default function Experience() {
 
           <div className="space-y-12">
             {experiences.map((exp, index) => (
-              <motion.div
+              <div
                 key={exp.id}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
                 className={`relative flex flex-col gap-8 md:flex-row ${
                   index % 2 === 0 ? "md:flex-row-reverse" : ""
                 }`}
               >
                 {/* Timeline Dot */}
                 <div className="bg-background border-primary absolute left-4 z-10 mt-1.5 h-4 w-4 -translate-x-1/2 rounded-full border-2 shadow-[0_0_10px_hsl(var(--primary)/0.5)] md:left-1/2">
-                  <motion.div
-                    animate={{ scale: [1, 1.5, 1] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                    className="bg-primary h-full w-full rounded-full opacity-50"
-                  />
+                  <div className="bg-primary h-full w-full rounded-full opacity-50" />
                 </div>
 
                 {/* Content Card */}
@@ -94,7 +77,7 @@ export default function Experience() {
 
                 {/* Empty Space for Alternate Side */}
                 <div className="hidden flex-1 md:block" />
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

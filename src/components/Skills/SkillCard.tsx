@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { useSkills } from "@/contexts/SkillsContext";
 import type { Skill } from "@/contexts/SkillsContext";
 
@@ -14,17 +13,10 @@ export function SkillCardGrid({ skill, index }: SkillCardProps) {
   const colors = expertiseColors[skill.expertise];
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.03 }}
-      whileHover={{ scale: 1.05, y: -5 }}
-      className="group relative"
-    >
+    <div className="group relative">
       {/* Card Container */}
       <div
-        className={`relative h-full rounded-xl border ${colors.border} ${colors.hoverBorder} bg-card/40 hover:bg-card/60 p-6 backdrop-blur-sm transition-all duration-300`}
+        className={`relative h-full rounded-xl border ${colors.border} ${colors.hoverBorder} bg-card/40 hover:bg-card/60 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:scale-105`}
       >
         {/* Glow Effect on Hover */}
         <div
@@ -56,7 +48,7 @@ export function SkillCardGrid({ skill, index }: SkillCardProps) {
           <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent" />
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
@@ -65,16 +57,9 @@ export function SkillCardList({ skill, index }: SkillCardProps) {
   const colors = expertiseColors[skill.expertise];
 
   return (
-    <motion.div
-      initial={{ opacity: 0, x: -20 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.4, delay: index * 0.02 }}
-      whileHover={{ x: 5 }}
-      className="group relative"
-    >
+    <div className="group relative">
       <div
-        className={`relative flex items-center gap-4 rounded-xl border ${colors.border} ${colors.hoverBorder} bg-card/40 hover:bg-card/60 p-4 backdrop-blur-sm transition-all duration-300 md:gap-6 md:p-5`}
+        className={`relative flex items-center gap-4 rounded-xl border ${colors.border} ${colors.hoverBorder} bg-card/40 hover:bg-card/60 p-4 backdrop-blur-sm transition-all duration-300 hover:translate-x-1 md:gap-6 md:p-5`}
       >
         {/* Glow Effect on Hover */}
         <div
@@ -106,6 +91,6 @@ export function SkillCardList({ skill, index }: SkillCardProps) {
           <div className="absolute inset-0 bg-gradient-to-r from-white/5 via-transparent to-transparent" />
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }

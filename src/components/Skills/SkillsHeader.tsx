@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { LayoutGrid, List } from "lucide-react";
 import { useSkills } from "@/contexts/SkillsContext";
 import type { GridSize } from "@/contexts/SkillsContext";
@@ -10,24 +9,12 @@ export function SkillsHeader() {
 
   return (
     <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-      <motion.h2
-        initial={{ opacity: 0, x: -30 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, type: "spring" }}
-        className="text-center text-3xl font-bold md:text-left md:text-4xl"
-      >
+      <h2 className="text-center text-3xl font-bold md:text-left md:text-4xl">
         Skills & Technologies
-      </motion.h2>
+      </h2>
 
       {/* View Controls */}
-      <motion.div
-        initial={{ opacity: 0, x: 30 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, type: "spring", delay: 0.1 }}
-        className="flex items-center justify-center gap-2"
-      >
+      <div className="flex items-center justify-center gap-2">
         {/* View Mode Toggle */}
         <div className="border-border/50 bg-card/40 flex gap-1 rounded-lg border p-1 backdrop-blur-sm">
           <button
@@ -56,13 +43,7 @@ export function SkillsHeader() {
 
         {/* Grid Size Selector (only visible in grid mode) */}
         {viewMode === "grid" && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.9 }}
-            transition={{ duration: 0.2 }}
-            className="border-border/50 bg-card/40 flex gap-1 rounded-lg border p-1 backdrop-blur-sm"
-          >
+          <div className="border-border/50 bg-card/40 flex gap-1 rounded-lg border p-1 backdrop-blur-sm transition-opacity">
             {[4, 5, 6].map((size) => (
               <button
                 key={size}
@@ -76,9 +57,9 @@ export function SkillsHeader() {
                 {size}
               </button>
             ))}
-          </motion.div>
+          </div>
         )}
-      </motion.div>
+      </div>
     </div>
   );
 }
