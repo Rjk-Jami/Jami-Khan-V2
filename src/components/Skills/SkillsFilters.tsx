@@ -15,7 +15,7 @@ export function SkillsFilters() {
     expertiseColors,
     viewMode,
   } = useSkills();
-
+  //filters
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
