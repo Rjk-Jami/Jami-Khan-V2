@@ -73,11 +73,11 @@ export default function PortfolioContent() {
             </SkillsProvider>
           </section>
 
-          <section id="experience" className="flex min-h-screen items-center py-10">
+          <section id="experience" className="flex py-10">
             <Experience />
           </section>
 
-          <section id="projects" className="flex min-h-screen items-center py-10">
+          <section id="projects" className="flex py-10">
             <Projects />
           </section>
 
